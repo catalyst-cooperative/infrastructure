@@ -1,0 +1,20 @@
+version: "3"
+
+services:
+
+    scrapers:
+        build:
+            context: ./scrapers
+        image: catalyst_scrapers
+        volumes:
+            - scraped-archives:/home/pudl/Downloads/pudl/scrape
+
+    zen_storage:
+        build:
+            context: ./zen_storage
+        image: zen_storage
+        volumes:
+            - scraped-archives:/home/pudl/Downloads/pudl/scrape
+
+volumes:
+    scraped-archives:

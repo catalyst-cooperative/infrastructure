@@ -1,0 +1,6 @@
+[submodule "scrapers"]
+	path = scrapers
+	url = git@github.com:catalyst-cooperative/scrapers.git
+[submodule "zen_storage"]
+	path = zen_storage
+	url = git@github.com:catalyst-cooperative/zen_storage.git
