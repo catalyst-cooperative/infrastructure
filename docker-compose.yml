@@ -5,16 +5,28 @@ services:
     scrapers:
         build:
             context: ./scrapers
+            args:
+                - UID=1000
+                - GID=1000
+        environment:
+            - PUDL_IN=/home/pudl/pudl
         image: catalyst_scrapers
         volumes:
-            - scraped-archives:/home/pudl/Downloads/pudl/scrape
+            - scraped-archives:/home/pudl/pudl
 
     zen_storage:
         build:
             context: ./zen_storage
+            args:
+                - UID=1000
+                - GID=1000
+        environment:
+            - PUDL_IN=/home/pudl/pudl
+            - ZENODO_LIVE_KEY
+            - ZENODO_TEST_KEY
         image: zen_storage
         volumes:
-            - scraped-archives:/home/pudl/Downloads/pudl/scrape
+            - scraped-archives:/home/pudl/pudl/scrape
 
 volumes:
     scraped-archives:
