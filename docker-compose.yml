@@ -26,7 +26,7 @@ services:
             - ZENODO_TEST_KEY
         image: zen_storage
         volumes:
-            - scraped-archives:/home/pudl/pudl/scrape
+            - scraped-archives:/home/pudl/pudl
 
 volumes:
     scraped-archives:
